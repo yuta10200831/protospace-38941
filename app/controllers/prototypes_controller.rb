@@ -14,7 +14,7 @@ class PrototypesController < ApplicationController
     if @prototype.save
       redirect_to root_path(@prototype)
     else
-      render :prototypes/new
+      render :prototypes_path
     end
   end
 
@@ -27,7 +27,7 @@ class PrototypesController < ApplicationController
     def edit
       @prototype = Prototype.find(params[:id])
       unless @prototype.user.id == current_user.id
-        redirect_to action: :edit_prototype_path
+        redirect_to edit_prototype_path
       end
     end
 
