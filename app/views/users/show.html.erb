@@ -5,7 +5,7 @@
           <%= link_to @user.name, user_path(current_user.id) %>
       </h2>
       <table class="table">
-        <tbody>
+        <tbody> 
           <tr>
             <th class="table__col1">名前</th>
             <td class="table__col2"><%= @user.name %></td>
@@ -25,10 +25,10 @@
         </tbody>
       </table>
       <h2 class="page-heading">
-        <%= @prototype %>
+        <%= @user.name %>
       </h2>
       <div class="user__card">
-        <% render partial: "prototypes/prototype", collection: @prototype %>
+        <%= render partial: "prototypes/prototype", collection: @prototypes %>
       </div>
     </div>
   </div>
